@@ -2131,3 +2131,63 @@ body.offcanvason .oliven-nav-toggle {
         background-attachment: scroll !important;
     }
 }
+
+/* Floating Music Player Button */
+.music-player-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    background: #e3a99e;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 18px rgba(227, 169, 158, 0.45);
+    transition: all 0.3s ease;
+}
+.music-player-btn i {
+    font-size: 22px;
+    color: #fff;
+    line-height: 1;
+}
+.music-player-btn:hover {
+    transform: scale(1.1);
+    background: #cf8c80;
+    box-shadow: 0 6px 22px rgba(207, 140, 128, 0.6);
+}
+.music-player-btn.playing {
+    background: #e3a99e;
+}
+.music-player-btn.playing i {
+    animation: musicSpin 4s linear infinite;
+}
+.music-player-btn.paused {
+    opacity: 0.8;
+    background: #777;
+}
+.music-player-btn .music-tooltip {
+    position: absolute;
+    right: 62px;
+    background: rgba(30, 30, 30, 0.85);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.music-player-btn:hover .music-tooltip {
+    opacity: 1;
+}
+@keyframes musicSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
